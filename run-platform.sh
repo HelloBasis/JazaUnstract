@@ -293,7 +293,7 @@ run_services() {
     # Show release notes on version update if applicable
     python3 "$script_dir/docker/scripts/release-notes/print_release_notes.py" "$current_version" "$target_branch"
   fi
-  echo -e "\nOnce the services are up, visit ""$blue_text""http://frontend.unstract.localhost""$default_text"" in your browser."
+  echo -e "\nOnce the services are up, visit ""$blue_text""http://unstract.jaza.ai""$default_text"" in your browser."
   echo -e "The async executor worker is included — Prompt Studio IDE runs are non-blocking."
   echo -e "\nSee logs with:"
   echo -e "    ""$blue_text""$docker_compose_cmd -f docker/docker-compose.yaml logs -f""$default_text"

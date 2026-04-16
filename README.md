@@ -85,7 +85,7 @@ cd unstract
 
 That's it!
 
-- Visit [http://frontend.unstract.localhost](http://frontend.unstract.localhost) in your browser
+- Visit [http://unstract.jaza.ai](http://unstract.jaza.ai) in your browser
 - Login with username: `unstract` password: `unstract`
 - Start extracting data!
 

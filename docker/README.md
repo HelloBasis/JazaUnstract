@@ -28,7 +28,7 @@ VERSION=dev docker compose -f docker-compose.yaml up -d frontend
 VERSION=dev docker compose -f docker-compose.yaml --profile optional up -d
 ```
 
-Now access frontend at http://frontend.unstract.localhost
+Now access frontend at http://unstract.jaza.ai
 
 ## Overriding a service's config
 
