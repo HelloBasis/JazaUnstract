@@ -71,7 +71,7 @@ Unstract comes well documented. You can get introduced to the [basics of Unstrac
 Next, either download a release or clone this repo and do the following:
 
 ✅ `./run-platform.sh`<br>
-✅ Now visit [http://frontend.unstract.localhost](http://frontend.unstract.localhost) in your browser <br>
+✅ Now visit [http://unstract.jaza.ai](http://unstract.jaza.ai) in your browser <br>
 ✅ Use username and password `unstract` to login
 
 That's all there is to it!

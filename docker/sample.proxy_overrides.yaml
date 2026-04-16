@@ -2,10 +2,10 @@ http:
   routers:
     frontend:
       service: frontend
-      rule: Host(`frontend.unstract.localhost`)
+      rule: Host(`unstract.jaza.ai`)
     backend:
       service: backend
-      rule: Host(`frontend.unstract.localhost`) && (PathPrefix(`/api/v1`) || PathPrefix(`/deployment`))
+      rule: Host(`unstract.jaza.ai`) && (PathPrefix(`/api/v1`) || PathPrefix(`/deployment`))
 
   services:
     frontend:

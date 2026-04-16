@@ -21,8 +21,28 @@ services:
     restart: unless-stopped
     # uncomment below command if persistance required.
     #command: redis-server --save 20 1 --loglevel warning --
+# IMPORTANT: Do not publish Redis to the host network.
+    # When Redis is reachable externally, it can be flipped into replica mode via `REPLICAOF`,
+    # causing "You can't write against a read only replica." across login/session + workers.
     ports:
       - "6379:6379"
+    command:
+      - redis-server
+      - --appendonly
+      - "yes"
+      - --protected-mode
+      - "no"
+      - --timeout
+      - "0"
+      - --tcp-keepalive
+      - "60"
+      # Prevent replication hijack (turning this instance into a replica)
+      - --rename-command
+      - "REPLICAOF"
+      - ""
+      - --rename-command
+      - "SLAVEOF"
+      - ""
     volumes:
       - redis_data:/data
     labels:
