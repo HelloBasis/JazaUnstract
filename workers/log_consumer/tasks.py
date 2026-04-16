@@ -114,6 +114,20 @@ def logs_consumer(**kwargs: Any) -> None:
         logger.error(f"Failed to emit WebSocket event: {e}")
 
 
+@shared_task(name="consume_log_history")
+def consume_log_history() -> None:
+    """Celery task to consume log history from Redis cache.
+
+    Delegates to process_log_history which checks the Redis queue
+    and calls the backend API to persist logs into the database.
+    """
+    from process_log_history import process_log_history
+
+    success = process_log_history()
+    if not success:
+        logger.error("Failed to process log history")
+
+
 # Health check task for monitoring
 @shared_task(name="log_consumer_health_check")
 def health_check() -> dict[str, Any]:
